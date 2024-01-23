@@ -1,0 +1,30 @@
+{
+  "name": "component-lib-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/component-lib-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/component-lib-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "component-lib:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "component-lib:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "component-lib:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["component-lib"]
+}
