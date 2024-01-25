@@ -1,17 +1,17 @@
-import { Directive, Input, computed, signal } from '@angular/core';
+import { computed, Directive, Input, signal } from '@angular/core';
 import { hlm } from '@spartan-ng/ui-core';
-import { VariantProps, cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import { ClassValue } from 'clsx';
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
 	'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
 	{
 		variants: {
 			variant: {
-				default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-				destructive: 'bg-red-600 text-gray-50 hover:bg-red-600/90',
+				default: 'bg-sky-500 text-primary-foreground hover:bg-primary/90',
+				destructive: 'bg-red-600 text-destructive-foreground hover:bg-destructive/90',
 				outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
-				secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+				secondary: 'bg-neutral-700 text-secondary-foreground hover:bg-secondary/80',
 				ghost: 'hover:bg-accent hover:text-accent-foreground',
 				link: 'underline-offset-4 hover:underline text-primary',
 			},
@@ -31,7 +31,8 @@ const buttonVariants = cva(
 type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 @Directive({
-	selector: '[xvuiBtn]',
+	// eslint-disable-next-line @angular-eslint/directive-selector
+	selector: '[xvui-button]',
 	standalone: true,
 	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {

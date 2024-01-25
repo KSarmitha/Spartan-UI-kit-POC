@@ -15,13 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@spartan-ng/ui-badge-helm": [
-        "xv-ui-kit/src/lib/ui/ui-badge-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-button-helm": [
-        "xv-ui-kit/src/lib/ui/ui-button-helm/src/index.ts"
-      ],
-      "xv-ui-kit": ["xv-ui-kit/src/index.ts"]
+      "xv-ui-kit": ["xv-ui-kit/src/index.ts"],
+      "xv-ui-kit/component/button": ["xv-ui-kit/src/lib/button/src/index.ts"],
+      "xv-ui-kit/component/card": ["xv-ui-kit/src/lib/card/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

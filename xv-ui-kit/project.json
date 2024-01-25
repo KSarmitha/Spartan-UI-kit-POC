@@ -1,7 +1,7 @@
 {
   "name": "xv-ui-kit",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "xv-ui-kit/src",
+  "sourceRoot": "xv-ui-kit",
   "prefix": "projects",
   "tags": [],
   "projectType": "library",
