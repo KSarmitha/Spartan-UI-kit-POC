@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { XvuiButtonDirective } from '@spartan-ng/ui-button-helm';
-import { LoadableButtonComponent } from '@xventure/xv-ui-kit';
+import { LoadableComponentComponent, XvuiButtonDirective } from '@spartan-ng/ui-button-helm';
 import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, XvuiButtonDirective, LoadableButtonComponent],
+  imports: [NxWelcomeComponent, RouterModule, XvuiButtonDirective, LoadableComponentComponent],
   selector: 'projects-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
