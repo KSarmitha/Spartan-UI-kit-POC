@@ -13,15 +13,15 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "projects",
-            "style": "camelCase"
+            "prefix": "xvui",
+            "style": "Kebab-case"
           }
         ],
         "@angular-eslint/component-selector": [
           "error",
           {
             "type": "element",
-            "prefix": "projects",
+            "prefix": "xvui",
             "style": "kebab-case"
           }
         ]

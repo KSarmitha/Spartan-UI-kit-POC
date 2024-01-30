@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { XvuiButtonDirective } from 'xv-ui-kit/component/button';
+import { LoadableButtonComponent, XvuiButtonDirective } from 'xv-ui-kit/component/button';
 import {
   XvuiCardContentDirective,
   XvuiCardDescriptionDirective,
@@ -23,7 +23,8 @@ import { NxWelcomeComponent } from './nx-welcome.component';
     XvuiCardDescriptionDirective,
     XvuiCardDirective,
     XvuiCardFooterDirective,
-    XvuiCardTitleDirective,],
+    XvuiCardTitleDirective,
+    LoadableButtonComponent],
   selector: 'projects-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
