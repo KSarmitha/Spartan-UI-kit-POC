@@ -1,0 +1,62 @@
+
+<div class="p-3 bg-slate-300">
+
+  <xvui-table class="w-full min-w-[400px] rounded-sm">
+    <xvui-trow>
+      <xvui-th class="w-52 ">
+        <div class="font-bold text-lg">Invoice</div></xvui-th>
+      <xvui-th class="w-60">Status</xvui-th>
+      <xvui-th class="flex-1">Method</xvui-th>
+      <xvui-th class="w-40 justify-end">Amount</xvui-th>
+    </xvui-trow>
+    <div class="x-table [&>*:nth-child(1)]:rounded-tl-lg  [&>*:nth-child(1)]:rounded-tr-lg [&>*:last-child]:rounded-bl-lg [&>*:last-child]:rounded-br-lg"
+         style="box-shadow: inset 4px 0 0;padding-left: 4px;border-radius: 6px">
+      @for (invoice of _invoices; track invoice.invoice) {
+        <xvui-trow class=" bg-white rounded-sm  ">
+          <xvui-td truncate class="w-52 font-medium">{{ invoice.invoice }}</xvui-td>
+          <xvui-td class="w-60">{{ invoice.paymentStatus }}</xvui-td>
+          <xvui-td class="flex-1">
+            <div>
+              x
+            </div>
+          </xvui-td>
+          <xvui-td class="w-40 justify-end">{{ invoice.totalAmount }}</xvui-td>
+        </xvui-trow>
+      }
+    </div>
+
+  </xvui-table>
+
+</div>
+
+
+
+
+<div class="p-3 mt-5 bg-slate-300">
+
+  <xvui-table class="w-full min-w-[400px] rounded-sm">
+    <xvui-trow>
+      <xvui-th class="w-52 ">Invoice</xvui-th>
+      <xvui-th class="w-60">Status</xvui-th>
+      <xvui-th class="flex-1">Method</xvui-th>
+      <xvui-th class="w-40 justify-end">Amount</xvui-th>
+    </xvui-trow>
+<!--    <div class="x-table [&>*:nth-child(1)]:rounded-tl-lg  [&>*:nth-child(1)]:rounded-tr-lg [&>*:last-child]:rounded-bl-lg [&>*:last-child]:rounded-br-lg"-->
+<!--         style="box-shadow: inset 4px 0 0;padding-left: 4px;border-radius: 6px">-->
+      @for (invoice of _invoices; track invoice.invoice) {
+        <xvui-trow class=" bg-white rounded-sm  ">
+          <xvui-td truncate class="w-52 font-medium">{{ invoice.invoice }}</xvui-td>
+          <xvui-td class="w-60">{{ invoice.paymentStatus }}</xvui-td>
+          <xvui-td class="flex-1">
+            <div>
+              x
+            </div>
+          </xvui-td>
+          <xvui-td class="w-40 justify-end">{{ invoice.totalAmount }}</xvui-td>
+        </xvui-trow>
+      }
+<!--    </div>-->
+
+  </xvui-table>
+
+</div>

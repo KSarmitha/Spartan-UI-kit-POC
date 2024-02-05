@@ -10,12 +10,14 @@ import {
   XvuiCardTitleDirective
 } from 'xv-ui-kit/component/card';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { TestTabComponent } from './test-tab/test-tab.component';
+import { TestTableComponent } from './test-table/test-table.component';
 
 @Component({
   standalone: true,
   imports: [
-    NxWelcomeComponent, 
-    RouterModule, 
+    NxWelcomeComponent,
+    RouterModule,
     XvuiButtonDirective,
     XvuiCardHeaderDirective,
     XvuiCardContentDirective,
@@ -24,7 +26,10 @@ import { NxWelcomeComponent } from './nx-welcome.component';
     XvuiCardDirective,
     XvuiCardFooterDirective,
     XvuiCardTitleDirective,
-    LoadableButtonComponent],
+    LoadableButtonComponent,
+    TestTabComponent,
+    TestTableComponent
+  ],
   selector: 'projects-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,0 +1,74 @@
+<div brnTabs='account' class='block  mx-auto'>
+  <div xvuiTabsList class=' w-full flex bg-gray-200' aria-label='tabs example'>
+    <button xvuiTabsTrigger='account' class="w-full">
+      <img xvuiTabIcon="account" appImageSrc="/assets/image/Star.svg" activeIcon="/assets/image/Star.svg" inActiveIcon="/assets/image/Final.svg" alt="cc"/>
+      Account
+    </button>
+    <button xvuiTabsTrigger='test'  class="w-full">test</button>
+    <button style="margin-left: auto" xvuiTabsTrigger='password' class="w-full">Password</button>
+  </div>
+  <div xvuiTabsContent='account'>
+    <div  class="p-2">
+      <div>
+        <input class="border-2 w-full">
+        <input class="border-2 w-full mt-2">
+        <input class="border-2 w-full mt-2">
+      </div>
+
+      <div class="mt-3">
+        <button xvui-button variant="outline">click</button>
+        <button xvui-button variant="default"  class="ml-3 w-36" XvuiTabChanges (click)="goToNext()">Next</button>
+      </div>
+
+    </div>
+
+  </div>
+  <div xvuiTabsContent='password'>
+dwadaw
+  </div>
+  <div xvuiTabsContent='test'>
+    <div class="p-3">
+      Image Selection
+
+      <div class="flex justify-between">
+        <button (click)="goToAccount()">Back</button>
+        <button xvui-button variant="default" size="lg" class="ml-3" (click)="goToPassword()">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="mt-3">
+  <div class="bg-white w-96 mx-auto p-2">
+    <div brnTabs="details" class="">
+      <div xvuiTabsList class="w-full bg-gray-200 flex">
+        <button xvuiTabsTrigger="details">Details</button>
+        <button xvuiTabsTrigger="avatar" [disabled]="disableBtb">Avatar</button>
+        <button style="margin-left: auto" xvuiTabsTrigger="review">Review</button>
+      </div>
+
+      <div xvuiTabsContent="details">
+        <div class="p-6">
+          <div>Details</div>
+          <button xvui-button variant="default" (click)="toggle()">{{disableBtb ? 'enable' : 'disable'}}</button>
+        </div>
+      </div>
+
+      <div xvuiTabsContent="avatar">
+        <div class="p-6">
+          Avatar
+        </div>
+      </div>
+
+      <div xvuiTabsContent="review">
+        <div class="p-6">
+          Review
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

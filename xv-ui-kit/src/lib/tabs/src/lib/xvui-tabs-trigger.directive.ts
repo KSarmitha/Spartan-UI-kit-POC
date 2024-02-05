@@ -1,36 +1,60 @@
-import { Directive, Input, computed, signal } from '@angular/core';
+import { Directive, Input, computed, signal, inject, booleanAttribute } from '@angular/core';
 import { hlm } from '@spartan-ng/ui-core';
-// import { BrnTabsTriggerDirective } from '@spartan-ng/ui-tabs-brain';
 import { ClassValue } from 'clsx';
+import { BrnTabsDirective } from './brn-tabs.directive';
 
 @Directive({
-	selector: '[xvui-tabs-trigger]',
-	standalone: true,
-	host: {
-		'[class]': '_computedClass()',
-	},
-	// hostDirectives: [BrnTabsTriggerDirective],
+  selector: '[xvuiTabsTrigger]',
+  standalone: true,
+  host: {
+    '[class]': '_computedClass()',
+    '(click)': 'activate()',
+    '[attr.data-state]': "selected() ? 'active' : 'inactive'",
+    '[attr.disabled]': "disabled ? true : undefined",
+  },
 })
-export class XvuiTabsTriggerDirective {
-	// private readonly _brn = inject(BrnTabsTriggerDirective);
-	private readonly _userCls = signal<ClassValue>('');
-	@Input()
-	set class(userCls: ClassValue) {
-		this._userCls.set(userCls);
-	}
+export class XvuiTabsTriggerDirective{
+  private readonly _userCls = signal<ClassValue>('');
+  private readonly _root = inject(BrnTabsDirective);
+  private _key: string | undefined;
+  protected contentId: string | undefined;
+  protected labelId: string | undefined;
 
-	// @Input('hlmTabsTrigger')
-	// set triggerFor(key: string) {
-	// 	if (this._brn) {
-	// 		this._brn.triggerFor = key;
-	// 	}
-	// }
+  public readonly selected = computed(() => this._root.$value() === this._key);
 
-	protected _computedClass = computed(() => this._generateClass());
-	private _generateClass() {
-		return hlm(
-			'inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm',
-			this._userCls(),
-		);
-	}
+  @Input()
+  set class(userCls: ClassValue) {
+    this._userCls.set(userCls);
+  }
+
+  @Input({ transform: booleanAttribute })
+  public disabled = false;
+
+  protected _computedClass = computed(() => this._generateClass());
+  private _generateClass() {
+    return hlm(
+      'inline-flex px-2.5 items-center justify-center  rounded-sm  text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:rounded-md data-[state=active]:text-red-600 data-[state=active]:shadow-sm font-bold text-base leading-7 text-blue-600 hover:text-red-600',
+      this._userCls(),
+    );
+  }
+
+  @Input('xvuiTabsTrigger')
+  set triggerFor(key: string) {
+    this._key = key;
+    this.contentId = 'brn-tabs-content-' + this._key;
+    this.labelId = 'brn-tabs-label-' + this._key;
+    this._root.registerTrigger(key, this);
+  }
+
+  public activate() {
+    console.log('hi');
+    console.log(this._key);
+    if (!this._key) return;
+    this._root.setValue(this._key);
+  }
+
+  public changeTab(key: string): void{
+    console.log('xx');
+    this._root.setValue(key);
+  }
 }

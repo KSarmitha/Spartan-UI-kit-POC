@@ -1,0 +1,43 @@
+<div class="flex items-center justify-center h-screen flex-col">
+
+<div class="p-4 m-2">
+<p>======Buttton======</p>
+<button xvui-button [variant]="'destructive'">Destructive</button>
+<button xvui-button [variant]="'secondary'">Secondary</button>
+<button xvui-button [variant]="'ghost'">Ghost</button>
+<button xvui-button [variant]="'link'">Link</button>
+<button xvui-button [variant]="'default'">Default</button>
+<br/>
+
+<button xvui-button [size]="'lg'" >Large</button>
+<button xvui-button [size]="'sm'">Small</button>
+<button xvui-button [size]="'default'">Default</button>
+<button xvui-button [size]="'icon'">
+    <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.68238 7.72725C4.4846 7.90943 4.23147 8 3.97851 8C3.708 8 3.43874 7.89639 3.23756 7.69179L0.280926 4.67381C-0.0943868 4.29015 -0.0936701 3.6878 0.283254 3.30536L3.24007 0.306157C3.63007 -0.0894959 4.27661 -0.103577 4.68453 0.27504C4.89656 0.471924 5.0022 0.736124 4.99993 1L5 7.00934C4.99979 7.27124 4.89335 7.53258 4.68238 7.72725Z" fill="#24272E"/>
+        </svg>
+</button>
+
+<!-- <button xvui-loadable-button [isLoading]="true">Loading...</button>  TODO: -->
+
+</div>
+
+<div class="p-4 m-2">
+<p>======Card========</p>
+<section class="w-80 justify-center " xvui-card>
+    <div xvui-card-header>
+        <h3 xvui-card-title>Create new project</h3>
+        <p xvui-card-description>Deploy your new project in one-click.</p>
+    </div>
+    <p xvui-card-content>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+    </p>
+    <div xvui-card-footer class="justify-between">
+        <button xvui-button variant="secondary">Cancel</button>
+        <button xvui-button>Create</button>
+    </div>
+</section>
+</div>
+</div>
