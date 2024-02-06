@@ -13,7 +13,6 @@ export type CardDescriptionVariants = VariantProps<typeof cardDescriptionVariant
 @Directive({
 	selector: '[xvui-card-description]',
 	standalone: true,
-	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {
 		'[class]': '_computedClass()',
 	},

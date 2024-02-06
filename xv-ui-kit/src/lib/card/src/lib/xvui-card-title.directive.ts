@@ -10,10 +10,8 @@ export const cardTitleVariants = cva('text-lg font-semibold leading-none trackin
 export type CardTitleVariants = VariantProps<typeof cardTitleVariants>;
 
 @Directive({
-	// eslint-disable-next-line @angular-eslint/directive-selector
 	selector: '[xvui-card-title]',
 	standalone: true,
-	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {
 		'[class]': '_computedClass()',
 	},

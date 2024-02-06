@@ -10,10 +10,8 @@ export const cardContentVariants = cva('p-6 pt-0', {
 export type CardContentVariants = VariantProps<typeof cardContentVariants>;
 
 @Directive({
-	// eslint-disable-next-line @angular-eslint/directive-selector
 	selector: '[xvui-card-content]',
 	standalone: true,
-	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {
 		'[class]': '_computedClass()',
 	},
