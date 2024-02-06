@@ -1,6 +1,6 @@
 {
   "name": "@KSarmitha/xv-ui-kit",
-  "version": "0.0.2",
+  "version": "0.0.16",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -18,14 +18,14 @@
     "tailwindcss": "^3.4.1"
   },
   "exports": {
-		"./xvui-tailwind-preset": {
-			"default": "./xvui-tailwind-preset.js"
-		},
-    "./xvui-tailwind.config.js": {
+    "./xvui-tailwind-preset.js": {
+      "default": "./xvui-tailwind-preset.js"
+    },
+    "./tailwind.config.js": {
       "default": "./tailwind.config.js"
     },
-    "./styles.scss": {
-      "default": "./styles.scss"
+    "./styles/tailwind.scss": {
+      "default": "./styles/tailwind.scss"
     }
 	},
   "dependencies": {

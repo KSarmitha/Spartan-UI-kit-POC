@@ -1,8 +1,7 @@
-const spartanPreset = require('@spartan-ng/ui-core/hlm-tailwind-preset');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	...spartanPreset,
 	theme: {
 		container: {
 			center: true,
@@ -13,49 +12,47 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(221, 18%, 83%)',
+				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: '#000000',
+				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				primary: 'hsl(255, 100%, 68%)',
-				secondary: 'hsl(223, 21%, 94%)',
+				primary: {
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))',
+				},
+				secondary: {
+					DEFAULT: 'hsl(var(--secondary))',
+					foreground: 'hsl(var(--secondary-foreground))',
+				},
 				destructive: {
-					DEFAULT: 'hsl(0, 100%, 70%)',
+					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))',
 				},
-				// muted: {
-				// 	DEFAULT: 'hsl(var(--muted))',
-				// 	foreground: 'hsl(var(--muted-foreground))',
-				// },
+				muted: {
+					DEFAULT: 'hsl(var(--muted))',
+					foreground: 'hsl(var(--muted-foreground))',
+				},
 				accent: {
-					DEFAULT: 'hsl(0, 0%, 100%)',
+					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))',
 				},
-				// popover: {
-				// 	DEFAULT: 'hsl(var(--popover))',
-				// 	foreground: 'hsl(var(--popover-foreground))',
-				// },
-				// card: {
-				// 	DEFAULT: 'hsl(var(--card))',
-				// 	foreground: 'hsl(var(--card-foreground))',
-				// },
-			},
-			// borderRadius: {
-			// 	lg: `var(--radius)`,
-			// 	md: `calc(var(--radius) - 2px)`,
-			// 	sm: 'calc(var(--radius) - 4px)',
-			// },
-			// fontFamily: {
-			// 	sans: ['var(--font-sans)', ...fontFamily.sans],
-			// },
-			backgroundColor: {
-				primary: 'hsl(255, 100%, 68%)',
-				secondary: '#EBEDF2',
-				destructive: {
-					DEFAULT: '#FF6666',
-					foreground: 'hsl(var(--destructive-foreground))',
+				popover: {
+					DEFAULT: 'hsl(var(--popover))',
+					foreground: 'hsl(var(--popover-foreground))',
 				},
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))',
+				},
+			},
+			borderRadius: {
+				lg: `var(--radius)`,
+				md: `calc(var(--radius) - 2px)`,
+				sm: 'calc(var(--radius) - 4px)',
+			},
+			fontFamily: {
+				sans: ['var(--font-sans)', ...fontFamily.sans],
 			},
 			keyframes: {
 				indeterminate: {
