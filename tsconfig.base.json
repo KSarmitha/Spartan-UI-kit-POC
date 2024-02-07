@@ -19,7 +19,10 @@
       "xv-ui-kit/component/button": ["xv-ui-kit/src/lib/button/src/index.ts"],
       "xv-ui-kit/component/card": ["xv-ui-kit/src/lib/card/src/index.ts"],
       "xv-ui-kit/component/table": ["xv-ui-kit/src/lib/table/src/index.ts"],
-      "xv-ui-kit/component/tabs": ["xv-ui-kit/src/lib/tabs/src/index.ts"]
+      "xv-ui-kit/component/tabs": ["xv-ui-kit/src/lib/tabs/src/index.ts"],
+      "xv-ui-kit/src/lib/accordion": [
+        "xv-ui-kit/src/lib/accordion/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
