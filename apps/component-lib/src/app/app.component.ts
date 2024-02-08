@@ -34,4 +34,5 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'component-lib';
+  isLoading = true;
 }

@@ -1,20 +1,22 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation, inject } from '@angular/core';
 import { XvuiButtonDirective } from './xvui-button.directive';
 
+export type Variant = 'default' | 'destructive' | 'secondary' | 'success' | 'warning' | 'info' | 'outline' | 'ghost' | 'link';
+export type Size = 'lg' | 'md' | 'sm' | 'xsm' | 'icon';
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'button[xvui-button][xvui-loadable-button]', //TODO: button[xvui-loadable-button][][xvui-button]
+  selector: '[xvui-loadable-button]',
   standalone: true,
   imports: [CommonModule],
   hostDirectives: [XvuiButtonDirective],
+  host: {
+    '[disabled]': `isLoading`,
+  },
   template: `
-  @if (isLoading) {
-      <button xvui-button class="flex mr-4">
-      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Floading&psig=AOvVaw0hdEVpBk7NARv9yoS6Xxq_&ust=1705745082308000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCKDgyOGZ6YMDFQAAAAAdAAAAABAE" class="mr-2 animate-spin"/> 
-      Please wait
-    </button>
-    } 
+    @if(isLoading){
+      <img src="https://cdn-dppbb.nitrocdn.com/RyaJIqOPsPMsUbkNfQxAzGEZqYiXmvTP/assets/images/optimized/rev-c2e94ad/www.appseconnect.com/wp-content/uploads/2017/08/loader.gif" class="mr-2 h-inherit"/> 
+      {{loadingText}}
+    }
     @else {
       <ng-content></ng-content>
     }
@@ -24,5 +26,18 @@ import { XvuiButtonDirective } from './xvui-button.directive';
   styles: []
 })
 export class LoadableButtonComponent {
+  private _xvuiButton = inject(XvuiButtonDirective);
+
   @Input() isLoading = false;
+  @Input() loadingText = 'Loading...';
+
+  @Input() 
+  set variant(variant: Variant){
+    this._xvuiButton.variant = variant;
+  }
+
+  @Input()
+  set size(size: Size){
+    this._xvuiButton.size = size;
+  }
 }

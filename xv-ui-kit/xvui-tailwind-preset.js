@@ -76,6 +76,9 @@ module.exports = {
 					},
 				},
 			},
+			height: {
+				inherit: 'inherit'
+			},
 			animation: {
 				indeterminate: 'indeterminate 4s infinite ease-in-out',
 			},
