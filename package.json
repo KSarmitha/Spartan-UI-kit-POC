@@ -14,6 +14,7 @@
     "@angular/platform-browser": "~17.0.0",
     "@angular/platform-browser-dynamic": "~17.0.0",
     "@angular/router": "~17.0.0",
+    "@ng-icons/heroicons": "^26.3.0",
     "@nx/angular": "17.2.8",
     "@spartan-ng/nx": "^0.0.1-alpha.322",
     "@spartan-ng/ui-core": "^0.0.1-alpha.321",
