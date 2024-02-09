@@ -18,14 +18,14 @@ export type Size = 'lg' | 'md' | 'sm' | 'xsm' | 'icon';
       {{loadingText}}
     }
     @else {
-      <ng-content></ng-content>
+      <ng-content/>
     }
     `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   styles: []
 })
-export class LoadableButtonComponent {
+export class XvuiLoadableButtonComponent {
   private _xvuiButton = inject(XvuiButtonDirective);
 
   @Input() isLoading = false;
