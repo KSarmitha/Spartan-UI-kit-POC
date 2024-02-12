@@ -1,10 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
-
-
 :root {
---font-sans: ''
+	--font-sans: 'Inter';
+	--background: 0 0% 100%;
+	--foreground: 240 10% 3.9%;
+	--card: 0 0% 100%;
+	--card-foreground: 240 10% 3.9%;
+	--popover: 0 0% 100%;
+	--popover-foreground: 240 10% 3.9%;
+	--primary: 255, 100%, 68%;
+	--primary-foreground: 0, 0%, 100%;
+	--secondary: 208, 7%, 46%;
+	--secondary-foreground: 0, 0%, 100%;
+	--success: 136, 45%, 53%;
+	--success-foreground: 0, 0%, 100%;
+	--warning: 28, 87%, 62%;
+	--warning-foreground: 249, 10%, 28%;
+	--info: 188, 78%, 41%;
+	--info-foreground: 0, 0%, 100%;
+	--muted: 240 4.8% 95.9%;
+	--muted-foreground: 240 3.8% 46.1%;
+	--accent: 240 4.8% 95.9%;
+	--accent-foreground: 240 5.9% 10%;
+	--destructive: 0, 100%, 70%;
+	--destructive-foreground: 0, 0%, 100%;
+	--border: 246, 10%, 80%;
+	--input: 240 5.9% 90%;
+	--ring: 240 5.9% 10%;
+	--radius: 0.5rem;
 }
+

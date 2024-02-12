@@ -1,23 +1,22 @@
-/* eslint-disable @angular-eslint/directive-selector */
 import { computed, Directive, Input, signal } from '@angular/core';
 import { hlm } from '@spartan-ng/ui-core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { ClassValue } from 'clsx';
 
-export const cardDescriptionVariants = cva('text-sm text-muted-foreground', {
+export const inputErrorVariants = cva('text-destructive text-sm font-medium', {
 	variants: {},
 	defaultVariants: {},
 });
-export type CardDescriptionVariants = VariantProps<typeof cardDescriptionVariants>;
+export type InputErrorVariants = VariantProps<typeof inputErrorVariants>;
 
 @Directive({
-	selector: '[xvui-card-description]',
+	selector: '[xvui-input-error]',
 	standalone: true,
 	host: {
 		'[class]': '_computedClass()',
 	},
 })
-export class XvuiCardDescriptionDirective {
+export class XvuiInputErrorDirective {
 	private readonly _userCls = signal<ClassValue>('');
 	@Input()
 	set class(userCls: ClassValue) {
@@ -26,6 +25,6 @@ export class XvuiCardDescriptionDirective {
 
 	protected _computedClass = computed(() => this._generateClass());
 	private _generateClass() {
-		return hlm(cardDescriptionVariants(), this._userCls());
+		return hlm(inputErrorVariants(), this._userCls());
 	}
 }

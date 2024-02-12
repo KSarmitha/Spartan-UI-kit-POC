@@ -4,37 +4,39 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { ClassValue } from 'clsx';
 
 export const buttonVariants = cva(
-	'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
+	'inline-flex items-center justify-center rounded text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring  disabled:opacity-50 disabled:cursor-not-allowed ring-offset-background',
 	{
 		variants: {
 			variant: {
-				default: 'bg-sky-500 text-primary-foreground hover:bg-primary/90',
-				destructive: 'bg-red-600 text-destructive-foreground hover:bg-destructive/90',
-				outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
-				secondary: 'bg-neutral-700 text-secondary-foreground hover:bg-secondary/80',
-				ghost: 'hover:bg-accent hover:text-accent-foreground',
+				default: 'bg-primary shadow-md text-primary-foreground hover:brightness-95',
+				secondary: 'bg-secondary shadow-md text-secondary-foreground hover:brightness-95',
+				success: 'bg-success shadow-md text-destructive-foreground hover:brightness-95',
+				destructive: 'bg-destructive shadow-md  text-destructive-foreground hover:brightness-95',
+				warning: 'bg-warning shadow-md text-warning-foreground hover:brightness-95',
+				info: 'bg-info shadow-md text-info-foreground hover:brightness-95',
+				outline: 'border border-input  hover:bg-accent hover:text-accent-foreground',
 				link: 'underline-offset-4 hover:underline text-primary',
+				ghost: 'hover:bg-accent hover:text-accent-foreground',
 			},
 			size: {
-				default: 'h-10 py-2 px-4',
-				sm: 'h-9 px-3 rounded-md',
-				lg: 'h-11 px-8 rounded-md',
-				icon: 'h-10 w-10',
+				icon: 'h-8 w-9',
+				lg: 'h-12 p-6 text-lg',
+				md: 'h-10 p-4 text-sm',
+				sm: 'h-8 p-3 text-xs',
+				xsm: 'h-7 p-2 text-xs',
 			},
 		},
 		defaultVariants: {
 			variant: 'default',
-			size: 'default',
+			size: 'md',
 		},
 	},
 );
 type ButtonVariants = VariantProps<typeof buttonVariants>;
 
 @Directive({
-	// eslint-disable-next-line @angular-eslint/directive-selector
 	selector: '[xvui-button]',
 	standalone: true,
-	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {
 		'[class]': '_computedClass()',
 	},
@@ -52,7 +54,7 @@ export class XvuiButtonDirective {
 		this._variant.set(variant);
 	}
 
-	private readonly _size = signal<ButtonVariants['size']>('default');
+	private readonly _size = signal<ButtonVariants['size']>('md');
 	@Input()
 	set size(size: ButtonVariants['size']) {
 		this._size.set(size);

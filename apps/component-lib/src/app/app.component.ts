@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LoadableButtonComponent, XvuiButtonDirective } from 'xv-ui-kit/component/button';
+import { XvuiInputDirective, XvuiInputErrorDirective } from 'xv-ui-kit';
+import { XvuiButtonDirective, XvuiIconButtonComponent, XvuiLoadableButtonComponent } from 'xv-ui-kit/component/button';
 import {
   XvuiCardContentDirective,
   XvuiCardDescriptionDirective,
@@ -28,7 +29,11 @@ import { TestTableComponent } from './test-table/test-table.component';
     XvuiCardTitleDirective,
     LoadableButtonComponent,
     TestTabComponent,
-    TestTableComponent
+    TestTableComponent,
+    XvuiLoadableButtonComponent,
+    XvuiInputDirective,
+    XvuiInputErrorDirective,
+    XvuiIconButtonComponent]
   ],
   selector: 'projects-root',
   templateUrl: './app.component.html',
@@ -36,4 +41,5 @@ import { TestTableComponent } from './test-table/test-table.component';
 })
 export class AppComponent {
   title = 'component-lib';
+  isLoading = true;
 }

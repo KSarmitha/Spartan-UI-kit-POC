@@ -17,10 +17,8 @@ export const cardHeaderVariants = cva('flex p-6', {
 export type CardHeaderVariants = VariantProps<typeof cardHeaderVariants>;
 
 @Directive({
-	// eslint-disable-next-line @angular-eslint/directive-selector
 	selector: '[xvui-card-header]',
 	standalone: true,
-	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {
 		'[class]': '_computedClass()',
 	},

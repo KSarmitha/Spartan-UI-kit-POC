@@ -1,6 +1,13 @@
 {
-  "name": "xv-ui-kit",
-  "version": "0.1.3",
+  "name": "@KSarmitha/xv-ui-kit",
+  "version": "0.0.18",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KSarmitha/Spartan-UI-kit-POC"
+  },
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0",
@@ -10,6 +17,17 @@
     "clsx": "^1.2.1",
     "tailwindcss": "^3.4.1"
   },
+  "exports": {
+    "./xvui-tailwind-preset.js": {
+      "default": "./xvui-tailwind-preset.js"
+    },
+    "./tailwind.config.js": {
+      "default": "./tailwind.config.js"
+    },
+    "./styles/tailwind.scss": {
+      "default": "./styles/tailwind.scss"
+    }
+	},
   "dependencies": {
     "tslib": "^2.3.0"
   },

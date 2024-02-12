@@ -6,7 +6,7 @@ import { ClassValue } from 'clsx';
 export const cardFooterVariants = cva('flex p-6 pt-0', {
 	variants: {
 		direction: {
-			row: 'flex-row items-center space-x-1.5',
+			row: 'flex-row items-center border-t-2 border-dashed border-gray-400',
 			column: 'flex-col space-y-1.5',
 		},
 	},
@@ -17,10 +17,8 @@ export const cardFooterVariants = cva('flex p-6 pt-0', {
 export type CardFooterVariants = VariantProps<typeof cardFooterVariants>;
 
 @Directive({
-	// eslint-disable-next-line @angular-eslint/directive-selector
 	selector: '[xvui-card-footer]',
 	standalone: true,
-	// eslint-disable-next-line @angular-eslint/no-host-metadata-property
 	host: {
 		'[class]': '_computedClass()',
 	},
