@@ -57,6 +57,9 @@ module.exports = {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))',
 				},
+        grayShadesNormal: 'hsl(var(--Gray-Shades-Normal))',
+        tertiary: 'hsl(var(--ter))',
+        vvBright: 'hsl(var(--vvBright))'
 			},
 			borderRadius: {
 				lg: `var(--radius)`,
@@ -82,6 +85,9 @@ module.exports = {
 			animation: {
 				indeterminate: 'indeterminate 4s infinite ease-in-out',
 			},
+      boxShadow:{
+        activeTabShadow: '0 .6rem .8rem rgba(0, 0, 0, 0.03), 0 .2rem .4rem rgba(0, 0, 0, 0.02), 0 0 .2rem rgba(0, 0, 0, 0.02);'
+      }
 		},
 	},
 	plugins: [require('tailwindcss-animate')],

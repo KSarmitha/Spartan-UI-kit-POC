@@ -27,13 +27,12 @@ import { TestTableComponent } from './test-table/test-table.component';
     XvuiCardDirective,
     XvuiCardFooterDirective,
     XvuiCardTitleDirective,
-    LoadableButtonComponent,
     TestTabComponent,
     TestTableComponent,
     XvuiLoadableButtonComponent,
     XvuiInputDirective,
     XvuiInputErrorDirective,
-    XvuiIconButtonComponent]
+    XvuiIconButtonComponent
   ],
   selector: 'projects-root',
   templateUrl: './app.component.html',

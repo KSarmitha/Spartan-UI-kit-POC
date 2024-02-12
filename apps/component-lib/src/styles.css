@@ -27,9 +27,13 @@
 	--accent-foreground: 240 5.9% 10%;
 	--destructive: 0, 100%, 70%;
 	--destructive-foreground: 0, 0%, 100%;
+  --Gray-Shades-Normal: 212, 100%, 64%;
 	--border: 246, 10%, 80%;
 	--input: 240 5.9% 90%;
 	--ring: 240 5.9% 10%;
 	--radius: 0.5rem;
+
+  --ter: 220, 4%, 96%;
+  --vvBright: 220, 12%, 16%;
 }
 

@@ -3,10 +3,10 @@ import { hlm } from '@spartan-ng/ui-core';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ClassValue } from 'clsx';
 
-const listVariants = cva('inline-flex  items-center  rounded-md bg-muted p-1 text-muted-foreground', {
+const listVariants = cva('inline-flex  items-center  rounded-md  p-1 text-muted-foreground', {
   variants: {
     orientation: {
-      horizontal: 'h-10 space-x-1',
+      horizontal: 'h-10 space-x-1 bg-tertiary',
       vertical: 'mt-2 flex-col h-fit space-y-1',
     },
   },

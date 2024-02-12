@@ -33,7 +33,7 @@ export class XvuiTabsTriggerDirective{
   protected _computedClass = computed(() => this._generateClass());
   private _generateClass() {
     return hlm(
-      'inline-flex px-2.5 items-center justify-center  rounded-sm  text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:rounded-md data-[state=active]:text-red-600 data-[state=active]:shadow-sm font-semibold h-full text-sm leading-4 text-blue-600 hover:text-red-600',
+      'inline-flex px-2.5 items-center justify-center  rounded-sm text-GrayShadesNormal transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:rounded-md data-[state=active]:text-vvBright data-[state=active]:activeTabShadow font-semibold h-full text-sm leading-4  hover:text-vvBright',
       this._userCls(),
     );
   }
