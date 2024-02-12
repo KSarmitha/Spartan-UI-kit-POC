@@ -1,0 +1,109 @@
+<!--<div class="flex w-full items-center justify-center pt-[20%]">-->
+<!--  <button [brnMenuTriggerFor]="menu" align="end">Open</button>-->
+<!--</div>-->
+
+
+<!--<ng-template #menu>-->
+<!--  <hlm-menu class="w-56">-->
+<!--    <hlm-menu-label>My Account</hlm-menu-label>-->
+<!--    <hlm-menu-separator />-->
+
+<!--    <hlm-menu-group>-->
+<!--      <button hlmMenuItem>start</button>-->
+<!--      <button hlmMenuItem [brnMenuTriggerFor]="invite">-->
+<!--        side-->
+<!--        <hlm-menu-item-sub-indicator />-->
+<!--      </button>-->
+
+
+<!--    </hlm-menu-group>-->
+<!--  </hlm-menu>-->
+<!--</ng-template>-->
+
+<!--<ng-template #invite>-->
+<!--  <hlm-sub-menu>-->
+<!--    <button hlmMenuItem>submenu</button>-->
+<!--  </hlm-sub-menu>-->
+<!--</ng-template>-->
+
+
+<div style="position: relative">
+  <div class="flex w-full items-center justify-center pt-[20%]">
+    <button hlmBtn variant="outline" align="end" [brnMenuTriggerFor]="menu">Open</button>
+  </div>
+  <ng-template #menu>
+    <hlm-menu class="w-56 ">
+      <hlm-menu-label>My Account</hlm-menu-label>
+      <hlm-menu-separator />
+      <hlm-menu-group>
+        <button hlmMenuItem>
+          <span>Profile</span>
+        </button>
+
+        <button hlmMenuItem>
+          <span>Billing</span>
+        </button>
+
+        <button hlmMenuItem>
+          <span>Settings</span>
+        </button>
+
+        <button hlmMenuItem>
+
+          <span>Keyboard Shortcuts</span>
+        </button>
+      </hlm-menu-group>
+
+      <hlm-menu-separator />
+
+      <hlm-menu-group>
+        <button hlmMenuItem>
+          <span>Team</span>
+        </button>
+
+        <button hlmMenuItem [brnMenuTriggerFor]="invite">
+          <span>Invite Users</span>
+          <hlm-menu-item-sub-indicator />
+        </button>
+
+        <button hlmMenuItem>
+          <span>New Team</span>
+        </button>
+      </hlm-menu-group>
+
+      <hlm-menu-separator />
+
+      <hlm-menu-group>
+
+
+        <button hlmMenuItem disabled>
+          <span>API</span>
+        </button>
+      </hlm-menu-group>
+
+      <hlm-menu-separator />
+
+      <button hlmMenuItem>
+        <span>Logout</span>
+
+      </button>
+    </hlm-menu>
+  </ng-template>
+
+  <ng-template #invite>
+    <hlm-sub-menu>
+      <button hlmMenuItem>
+        Email
+      </button>
+
+      <button hlmMenuItem>
+        Message
+      </button>
+      <hlm-menu-separator />
+      <button hlmMenuItem>
+        <span>More</span>
+      </button>
+    </hlm-sub-menu>
+  </ng-template>
+</div>
+
