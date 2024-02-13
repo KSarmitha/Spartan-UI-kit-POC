@@ -32,7 +32,7 @@ export class XvuiTrowComponent {
 	protected _computedClass = computed(() => this._generateClass());
 	private _generateClass() {
 		return hlm(
-			'flex flex border-dashed border-b border-zinc-300 transition-colors  data-[state=selected]:bg-muted  ',
+			'flex flex border-dashed border-b border-dull transition-colors  data-[state=selected]:bg-muted  ',
 			this._userCls(),
 		);
 	}

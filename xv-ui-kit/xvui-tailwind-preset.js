@@ -87,6 +87,9 @@ module.exports = {
 			},
       boxShadow:{
         activeTabShadow: '0 .6rem .8rem rgba(0, 0, 0, 0.03), 0 .2rem .4rem rgba(0, 0, 0, 0.02), 0 0 .2rem rgba(0, 0, 0, 0.02);'
+      },
+      borderColor: {
+        dull: 'hsl(var(--dull))'
       }
 		},
 	},
